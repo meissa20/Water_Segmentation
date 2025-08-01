@@ -1,0 +1,59 @@
+body {
+            font-family: Arial, sans-serif;    /* Use a clean modern font */
+            background-color: #526D82;         /* Light gray background */
+            display: flex;                     /* Flexbox layout to center */
+            justify-content: center;           /* Horizontally center the content */
+            align-items: center;               /* Vertically center the content */
+            height: 100vh;                     /* Full screen height */
+            margin: 0;                         /* Remove default margins */
+    }
+
+.container {
+            background-color: #9DB2BF;           
+            color: #27374D;
+            padding: 30px;                     /* Space inside the box */
+            border-radius: 10px;               /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* The last value (A = alpha) is from 0 (fully transparent) to 1 (fully opaque)
+                                                           box-shadow: x-offset y-offset blur-radius color;  */
+            text-align: center;                /* Center the text */
+            /* width: 400px;                      Limit the width */
+        }
+
+input[type="file"] {
+    margin: 20px 0;                   /* Space around file input */
+}
+
+input[type="submit"] {
+    background-color: #DDE6ED;       
+    color: #27374D;                  
+    border: 2px solid #DDE6ED;
+    padding: 10px 20px;              /* Size of button */
+    font-size: 16px;                 /* Text size */
+    border-radius: 5px;              /* Rounded edges */
+    cursor: pointer;                 /* Shows pointer on hover */
+}
+
+input[type="submit"]:hover {
+    background-color: #718795;       /* Slightly darker green when hovered */
+    border: 2px solid #718795;
+
+}
+
+.result-row {
+    display: flex;                /* Arrange children in a row */
+    justify-content: center;     /* Center them horizontally */
+    gap: 20px;                    /* Space between the two images */
+    margin-top: 30px;             /* Space above the image row */
+    flex-wrap: wrap;              /* Allow wrapping on small screens */
+}
+
+.predicted, .origin {
+    max-width: 45%;               /* Make sure they fit side by side */
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.predicted img, .origin img {
+    width: 300px;
+    height: auto;
+}
