@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Water Segmentation App</title>
+    <link rel="stylesheet" href="/style.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <h1>Please upload your satellite image (.tif)</h1>
+        <form method="post" action="{{ url_for('file_upload') }}" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".tif,image/*" required>
+            <input type="submit" value="Upload">
+        </form>
+
+        {% if pred %}
+            <div class="result-row">
+                <div class="predicted">
+                    <h2>Predicted Mask</h2>
+                    <img src="data:image/png;base64,{{ pred }}" alt="Predicted Mask">
+                </div>
+                <div class="origin">
+                    <h2>Original Mask</h2>
+                    <img src="/test_data/test_labels/{{or_label}}.png" alt="Original Mask">
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
